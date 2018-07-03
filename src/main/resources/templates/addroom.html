@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<form th:action="@{/saveroom}" th:object="${aRoom}" method="post" sec:authorize="hasAuthority('DAVE')">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Add Room</h1><br/><br/>
+        </div>
+        <div>
+            <input type="hidden" th:field="*{id}">
+            Address Of the Room :<input type="text" class="form-control" th:field="*{address} " size="10"/>
+        </div>
+        <div >
+            city :<input type="text" class="form-control" th:field="*{city}" size="10"/>
+        </div>
+        <div >
+            state :<input type="text" class="form-control" th:field="*{states}" size="10"/>
+        </div>
+        <div >
+            price :<input type="number" class="form-control" th:field="*{price}" size="10"/>
+        </div>
+
+        <br/><br/>
+        <div>
+            <button class="alig" type="submit"><span class="glyphicon glyphicon-envelope"></span>Add Room</button>
+        </div>
+    </div>
+    </div>
+
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

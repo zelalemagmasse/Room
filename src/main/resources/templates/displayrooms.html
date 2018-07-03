@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/newStylesheet.css">
+</head>
+<body class="bg1">
+
+<div class="container">
+
+    <h2>List of Rooms Available</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ROOMS</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="roomlist : ${rooms}">
+            <td>
+                <a th:href="@{/detail/{id}(id=${roomlist.id})}"><span th:text="${roomlist.address}"/></a>
+            </td>
+            <td sec:authorize="hasAuthority('DAVE')">    <a th:href="@{/update/{id}(id=${roomlist.id})}">Update</a><br /> </td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
