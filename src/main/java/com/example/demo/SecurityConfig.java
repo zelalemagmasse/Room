@@ -37,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         PasswordEncoder theEncoder= encoder();
-        auth.inMemoryAuthentication().withUser("DaveWolf").password(encoder().encode("beastmaster")).authorities("DAVE")
+        auth.inMemoryAuthentication().withUser("DaveWolf").password(encoder().encode("beastmaster")).authorities("DAVE","USER")
 
-                .and().withUser("ordinaryuser").password(encoder().encode("ordinaryuser")).authorities("USER","DAVE")
+                .and().withUser("ordinaryuser").password(encoder().encode("ordinaryuser")).authorities("USER")
                 .and().passwordEncoder(theEncoder);
     }
 }

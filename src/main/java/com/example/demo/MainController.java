@@ -36,6 +36,11 @@ public class MainController {
 
         roomRipository.save(room);
         model.addAttribute("rooms",roomRipository.findAll());
+       if(room.isRented()){
+           room.setIsRentednow("TAKEN");
+       }
+       else
+           room.setIsRentednow("FREE");
 
         return "displayrooms";
     }

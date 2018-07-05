@@ -23,6 +23,9 @@
             <td>
                 <a th:href="@{/detail/{id}(id=${roomlist.id})}"><span th:text="${roomlist.address}"/></a>
             </td>
+
+            <td th:text="${roomlist.rented ? 'Yes' : 'No'}"></td>
+
             <td sec:authorize="hasAuthority('DAVE')">    <a th:href="@{/update/{id}(id=${roomlist.id})}">Update</a><br /> </td>
 
 

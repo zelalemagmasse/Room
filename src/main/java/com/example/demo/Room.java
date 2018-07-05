@@ -13,6 +13,27 @@ public class Room {
     private String states;
     private long price;
 
+    public String getIsRentednow() {
+        return isRentednow;
+    }
+
+    public void setIsRentednow(String isRentednow) {
+        this.isRentednow = isRentednow;
+    }
+
+    private String isRentednow;
+
+
+    public boolean isRented() {
+        return rented;
+    }
+
+    public void setRented(boolean rented) {
+        rented = rented;
+    }
+
+    private boolean rented;
+
     private String address;
 
     public long getId() {

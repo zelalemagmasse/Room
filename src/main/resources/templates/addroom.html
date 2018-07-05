@@ -26,6 +26,10 @@
         <div >
             price :<input type="number" class="form-control" th:field="*{price}" size="10"/>
         </div>
+        <div class="form-group col-md-6">
+            <label for="rented" th:text="'Rented'"></label>
+            <input type="checkbox" class="form-control" th:field="*{rented}" th:checked="${rented}">
+        </div>
 
         <br/><br/>
         <div>
